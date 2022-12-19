@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "FlatList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+}
+
+<div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Daireler </h5>
+
+                    <!-- Table with stripped rows -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"> Daire Sayısı </th>
+                                <th scope="col"> Blok</th>
+                                <th scope="col"> Kat</th>
+                                <th scope="col"> Kapı Numarası</th>
+                                <th scope="col"> Oda Sayısı</th>
+                                <th scope="col"> Durumu</th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var item in ViewBag.flats)
+                        {
+                            counter++;
+                            <tbody>
+                                <tr>
+                                    <th scope="row">@counter</th>
+                                    <td>@item.Block</td>
+                                    <td>@item.Floor</td>
+                                    <td>@item.DoorNumber</td>
+                                    <td>@item.RoomCount</td>
+                                    <td>@item.FlatStatus</td>
+                                    <td scope="col"><a href="~/Manager/Flat/UpdateFlat/@item.FlatID" class="btn btn-success">Güncelle</a></td>
+                                    <td scope="col"><a href="~/Manager/Flat/DeleteFlat/@item.FlatID" class="btn btn-danger">Sil</a></td>
+                                </tr>
+                            </tbody>
+                        }
+
+
+                    </table>
+                    <!-- End Table with stripped rows -->
+                    <a href="~/Manager/Flat/CreateFlat/" class="btn btn-primary">Yeni Daire Ekle</a>
+                    <a href="~/Manager/Flat/CreatePDF/" class="btn btn-success">PDF'e Aktar</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+

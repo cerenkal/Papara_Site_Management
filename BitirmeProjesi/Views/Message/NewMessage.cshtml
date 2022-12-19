@@ -1,0 +1,70 @@
+﻿@using SiteManagement.Entities
+@model Message
+@{
+    ViewData["Title"] = "NewMessage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    if (TempData["mesaj"] != null)
+    {
+        <div class="bg-primary text-white text-center lead">
+            @TempData["mesaj"]
+        </div>
+    }
+}
+
+ <body class="hold-transition sidebar-mini">
+
+    <!-- Content Header (Page header) -->
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- /.col -->
+                <div class="col-md-9">
+                    @using (Html.BeginForm("NewMessage", "Message", FormMethod.Post))
+                    {
+                        <div class="card card-primary card-outline">
+                            <div class="card-header">
+                                <h3 class="card-title">Yeni Mesaj Oluştur</h3>
+                            </div>
+                            <!-- /.card-header -->
+
+
+                            <div class="card-body">
+                                <div class="form-group">
+                                    @Html.Label(" Alıcı Maili")
+                                    @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+                                    @Html.Label("Konu")
+                                    @Html.TextBoxFor(x => x.Subject, new { @class = "form-control" })
+                                </div>
+                                <div class="form-group">
+
+                                    @Html.Label("Mesajınız")
+                                    <textarea id="compose-textarea" class="form-control" name="Content" style="height: 300px">
+
+                        </textarea>
+                                </div>
+                                
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <div class="float-right">
+                                    <button type="submit" class="btn btn-primary"><i class="far fa-envelope"></i> Gönder</button>
+                                </div>
+                            </div>
+                            <!-- /.card-footer -->
+                        </div>
+                    }
+                 
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    </body>
+

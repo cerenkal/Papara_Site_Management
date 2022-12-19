@@ -1,0 +1,87 @@
+﻿@using SiteManagement.Entities
+@model AppUser
+@{
+    ViewData["Title"] = "MyProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+  
+}
+
+
+<div class="pagetitle">
+    <h1>Profilim</h1>
+</div><!-- End Page Title -->
+<body>
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+
+                        <form method="post" asp-action="MyProfile" enctype="multipart/form-data">
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Adı</label>
+                                <div class="col-sm-12">
+                                    <input type="text" ReadOnly="true" class="form-control" asp-for="Name">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Soyadı</label>
+                                <div class="col-sm-12">
+                                    <input type="text" ReadOnly="true" class="form-control" asp-for="Surname">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Kimlik Numarası</label>
+                                <div class="col-sm-12">
+                                    <input type="text" ReadOnly="true" class="form-control" asp-for="IdentityNumber">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Araç Plakası</label>
+                                <div class="col-sm-12">
+                                    <input type="text" ReadOnly="true" class="form-control" asp-for="VehicleRegistrationNumber">
+                                </div>
+                            </div>
+
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Telefon</label>
+                                <div class="col-sm-12">
+                                    <input type="text" ReadOnly="true" class="form-control" asp-for="PhoneNumber">
+                                </div>
+
+
+                                <div class="row mb-3">
+                                    <label class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-12">
+                                        <input type="email" ReadOnly="true" class="form-control" asp-for="Email">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <td scope="col"><a href="~/Manager/Flat/UpdateUser" class="btn btn-success">Güncelle</a></td>
+                                </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+
+</body>
+
+
+

@@ -1,0 +1,30 @@
+﻿@using SiteManagement.Entities
+@model Message
+@{
+    ViewData["Title"] = "InboxDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+    <section>
+        <div class="card-body p-0">
+            <div class="mailbox-read-info">
+                <h3>Konu: @Html.DisplayFor(x => x.Subject)</h3>
+                <br />
+                <div class="mailbox-read-info">
+                    <h6>
+                        Gönderen:  @Html.DisplayFor(x => x.SenderMail)
+
+                    </h6>
+                </div>
+                <div class="mailbox-read-info">Tarih:<span class="mailbox-read-time float-right">@Model.Date.ToShortDateString()</span></div>
+            </div>
+
+            <div class="mailbox-read-message">
+                <p> Mesaj: @Html.DisplayFor(x => x.Content)</p>
+            </div>
+
+        </div>
+    </section>
+</body>
+

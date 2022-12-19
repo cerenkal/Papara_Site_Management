@@ -1,0 +1,65 @@
+﻿@using SiteManagement.Entities
+@model CreditCard
+@{
+    ViewData["Title"] = "AddCreditCard";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<body>
+
+    <div class="pagetitle">
+        <h1>Kredi Kartı Ekle</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+
+                        <form method="post" enctype="multipart/form-data">
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Kredi Kartı Numaranız</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Lütfen 16 haneli kart numaranızı giriniz.." asp-for="CardNumber">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Son Kullanma Tarihi</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Lütfen tarihi 01/01 formatında yazınız.." asp-for="ExpirationDate">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Güvenlik Numaranız</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" placeholder="Kartınızın arka yüzündeki güvenlik numarasının son 3 hanesini giriniz.." asp-for="CVV">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-sm-12" style="display:flex; justify-content:flex-end">
+                                    <button type="submit" class="btn btn-primary rounded-pill">Kaydet</button>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+</body>
+
+

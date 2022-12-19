@@ -1,0 +1,70 @@
+﻿@using SiteManagement.Entities
+@using SiteManagement.Entities.Enums
+@model Flat
+@{
+    ViewData["Title"] = "UpdateFlat";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<body>
+
+    <div class="pagetitle">
+        <h1>Daire Güncelleme Sayfası</h1>
+
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+
+                        <form method="post" enctype="multipart/form-data">
+
+
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Blok</label>
+                                <div class="col-sm-12">
+                                    @Html.DropDownListFor(x=>x.Block,Html.GetEnumSelectList<Block>(), new {@class="form-control"})
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Daire Numarası</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" asp-for="DoorNumber">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Daire Katı</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" asp-for="Floor">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label class="col-sm-3 col-form-label">Oda Sayısı</label>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control" asp-for="RoomCount">
+                                </div>
+                            </div>
+
+
+                            <div class="row mb-3">
+                                <div class="col-sm-12" style="display:flex; justify-content:flex-end">
+                                    <button type="submit" class="btn btn-primary rounded-pill">Güncelle</button>
+                                </div>
+                            </div>
+
+                        </form><!-- End General Form Elements -->
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+</body>
+

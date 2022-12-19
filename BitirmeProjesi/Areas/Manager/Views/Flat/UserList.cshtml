@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "UserList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 0;
+}
+
+<h1>UserList</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+
+    <div class="pagetitle">
+        <h1 style="color: azure;">Daire Sakinleri Listesi</h1>
+    </div><!-- End Page Title -->
+
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Daire Sakinleri</h5>
+
+                    <!-- Table with stripped rows -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col"> No</th>
+                               <th scope="col"> Ad</th>
+                                <th scope="col"> Soyad</th>
+                                <th scope="col"> Mail Adresi</th>
+                            </tr>
+                        </thead>
+
+                        @foreach (var item in ViewBag.user)
+                        {
+                            counter++;
+                            <tbody>
+                                <tr>
+                                    <th scope="row">@counter</th>
+                                     <td>@item.Name</td>
+                                     <td>@item.Surname</td>
+                                     <td>@item.Email</td>
+                                    <td scope="col"><a href="~/Manager/Flat/UpdateUserFromAdmin/@item.Id" class="btn btn-success">Güncelle</a></td>
+                                    <td scope="col"><a href="~/Manager/Flat/DeleteUser/@item.Id" class="btn btn-danger">Sil</a></td>
+                                </tr>
+
+                            </tbody>
+                        }
+
+
+                    </table>
+                    <!-- End Table with stripped rows -->
+                    <a href="~/Manager/Flat/CreateUser/" class="btn btn-primary">Kullanıcı Ekle</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
